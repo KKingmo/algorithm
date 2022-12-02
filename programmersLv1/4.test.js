@@ -1,0 +1,46 @@
+/*
+https://school.programmers.co.kr/learn/courses/30/lessons/12928#
+약수의 합
+문제 설명
+정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+
+제한 사항
+n은 0 이상 3000이하인 정수입니다.
+입출력 예
+n	return
+12	28
+5	6
+입출력 예 설명
+입출력 예 #1
+12의 약수는 1, 2, 3, 4, 6, 12입니다. 이를 모두 더하면 28입니다.
+
+입출력 예 #2
+5의 약수는 1, 5입니다. 이를 모두 더하면 6입니다.
+*/
+
+function solution(n) {
+  let sum = 0;
+  if (n < 2) {
+    return n;
+  }
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      if (i === n / i) {
+        sum += i;
+        continue;
+      }
+      sum += i + n / i;
+    }
+  }
+  return sum;
+}
+
+describe("solution", () => {
+  test("1", () => {
+    expect(solution(12)).toEqual(28);
+  });
+
+  test("2", () => {
+    expect(solution(5)).toEqual(6);
+  });
+});
