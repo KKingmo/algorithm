@@ -41,8 +41,9 @@ function solution(n, s) {
   if (s <= n) return [-1];
   const [a, b] = [Math.floor(s / n), s % n];
   const arr = new Array(n).fill(a);
+  const maxIndex = arr.length - 1;
   for (let i = 0; i < b; i++) {
-    arr[arr.length - 1 - i] += 1;
+    arr[maxIndex - i] += 1;
   }
   return arr;
 }
