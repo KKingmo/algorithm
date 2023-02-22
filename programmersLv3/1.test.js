@@ -38,7 +38,7 @@ n	s	result
 */
 
 function solution(n, s) {
-  if (s <= n) return [-1];
+  if (s < n) return [-1];
   const [a, b] = [Math.floor(s / n), s % n];
   const arr = new Array(n).fill(a);
   const maxIndex = arr.length - 1;
