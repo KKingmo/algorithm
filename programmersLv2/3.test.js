@@ -34,14 +34,14 @@ function solution(s) {
 
 describe("solution", () => {
   test("1", () => {
-    expect(solution("1 2 3 4")).toEqual(["1 4"]);
+    expect(solution("1 2 3 4")).toEqual("1 4");
   });
 
   test("2", () => {
-    expect(solution("-1 -2 -3 -4")).toEqual(["-4 -1"]);
+    expect(solution("-1 -2 -3 -4")).toEqual("-4 -1");
   });
 
   test("3", () => {
-    expect(solution("-1 -1")).toEqual(["-1 -1"]);
+    expect(solution("-1 -1")).toEqual("-1 -1");
   });
 });
